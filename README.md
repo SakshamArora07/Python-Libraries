@@ -1,2 +1,2 @@
 # Python-Libraries
-This repository contains codes of Python libraries like Pandas,Numpy,Matplotlib...
+This repository contains codes of Python libraries like Pandas,Numpy,Matplotlib.
