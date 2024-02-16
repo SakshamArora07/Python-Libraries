@@ -24,3 +24,16 @@ test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE_TEST, shuffle=True)
 
 examples = enumerate(test_loader)
 batch_idx, (example_data, example_targets) = next(examples)
+def get_df(path, classes=['dogs', 'cats']):
+    paths = pd.DataFrame({'class': [], 'path': []})
+    for c in classes:
+        df = pd.DataFrame({
+            'class': c,
+            'path': glob.glob(path + c + '/*')
+        })
+
+        paths = pd.concat([paths, df])
+
+    paths.reset_index(inplace=False)
+
+    return paths
